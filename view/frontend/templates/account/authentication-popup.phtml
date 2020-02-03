@@ -1,25 +1,23 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-// @codingStandardsIgnoreFile
-
 /** @var \Magento\Customer\Block\Account\AuthenticationPopup $block */
+
+$viewFileUrl = $block->getViewFileUrl('images/loader-1.gif');
+$escapedViewFileUrl = $block->escapeJs(
+    $block->escapeUrl(
+        $viewFileUrl
+    )
+);
 ?>
-<div id="authenticationPopup" data-bind="scope:'authenticationPopup'" style="display: none;">
-    <script>
-        window.authenticationPopup = <?= /* @noEscape */ $block->getSerializedConfig() ?>;
-    </script>
+<div id="signInPopup" data-bind="scope:'signInPopup'"
+     style="display: none;">
     <!-- ko template: getTemplate() --><!-- /ko -->
     <script type="text/x-magento-init">
         {
-            "#authenticationPopup": {
+            "#signInPopup": {
                 "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
             },
             "*": {
-                "Magento_Ui/js/block-loader": "<?= $block->escapeJs($block->escapeUrl($block->getViewFileUrl('images/loader-1.gif'))) ?>"
+                "Magento_Ui/js/block-loader": "<?= $escapedViewFileUrl ?>"
             }
         }
     </script>
