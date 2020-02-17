@@ -7,6 +7,8 @@
 ![Tested on >= Magento 2.3.2](https://img.shields.io/badge/Tested%20on->=%20Magento%202.3.2-f26322.svg)
 ![No DB Migrations](https://img.shields.io/badge/Deploy-No%20DB%20Migrations-26A2AA.svg)
 
+By default clicking on the "Sign In" button in the header, you will be redirected to the "Sign In" page. To improve UX better to show popup instead. This module extends the "Sign In for Checkout" popup and opens another popup with a form to sign-in after a click on the "Sign In" button.
+
 ## Installation
 ### Requirements:
  - "magento/module-customer": ">100.0"
